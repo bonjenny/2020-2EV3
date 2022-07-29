@@ -1,0 +1,47 @@
+#pragma config
+
+task main() {
+	while(SensorValue[Gyro] <= 90) {
+		motor[motorB]=30;
+		motor[motorC]=-30;
+	}
+	while(SensorValue[Gyro] >= 0) {
+		motor[motorC]=30;
+	}
+	while(1) {
+		motor[motorB] = 20;
+		motor[motorC] = 20;
+		wait1Msec(1000);
+		break;
+	}
+	sleep(1000);
+
+	while(SensorValue[Gyro] >= -180) {
+		motor[motorB]=-30;
+		motor[motorC]=30;
+	}
+	while(SensorValue[Gyro] <= 0) {
+		motor[motorC]=-30;
+	}
+	while(1) {
+		motor[motorB] = 20;
+		motor[motorC] = 20;
+		wait1Msec(1000);
+		break;
+	}
+	sleep(1000);
+
+	while(SensorValue[Gyro] >= -270) {
+		motor[motorB]=-30;
+		motor[motorC]=30;
+	}
+	while(SensorValue[Gyro] <= 0) {
+		motor[motorC]=-30;
+	}
+	while(1) {
+		motor[motorB] = 20;
+		motor[motorC] = 20;
+		wait1Msec(1000);
+		break;
+	}
+}
